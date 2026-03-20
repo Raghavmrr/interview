@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Booking App</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .slot { padding: 10px; margin: 5px; border: 1px solid #ccc; display: inline-block; cursor: pointer; }
+        .slot.booked { background-color: #f00; color: #fff; }
+    </style>
+</head>
+<body>
+    <h1>Interview Booking App</h1>
+    <h2>Available Slots</h2>
+    <div id="slots"></div>
+
+    <script>
+        const slots = [
+            { time: '2026-03-20 10:00', booked: false },
+            { time: '2026-03-20 11:00', booked: false },
+            { time: '2026-03-20 12:00', booked: true }, // booked slot example
+            { time: '2026-03-20 13:00', booked: false }
+        ];
+
+        const slotsContainer = document.getElementById('slots');
+
+        function displaySlots() {
+            slotsContainer.innerHTML = '';
+            slots.forEach((slot, index) => {
+                const slotDiv = document.createElement('div');
+                slotDiv.textContent = slot.time;
+                slotDiv.className = `slot ${slot.booked ? 'booked' : ''}`;
+                slotDiv.onclick = () => bookSlot(index);
+                slotsContainer.appendChild(slotDiv);
+            });
+        }
+
+        function bookSlot(index) {
+            if (!slots[index].booked) {
+                slots[index].booked = true;
+                alert('Slot booked successfully!');
+                displaySlots();
+            } else {
+                alert('This slot is already booked.');
+            }
+        }
+
+        displaySlots();
+    </script>
+</body>
+</html>
