@@ -1,0 +1,1 @@
+{"name": "interview-booking-app", "version": "1.0.0", "description": "A full-stack application for booking interviews", "main": "index.js", "scripts": {"test": "echo 'Error: no test specified' && exit 1"}, "repository": {"type": "git", "url": "https://github.com/Raghavmrr/interview.git"}, "keywords": ["interview", "booking", "fullstack"], "author": "Raghav M", "license": "ISC"}
